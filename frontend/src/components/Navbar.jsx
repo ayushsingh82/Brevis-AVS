@@ -1,0 +1,29 @@
+import React from 'react'
+
+
+function Navbar() {
+    return (
+      <nav className=''>
+        <div className='flex flex-row mx-auto px-[40px] py-[25px] justify-between items-center mt-[0px] bg-black'>
+          <div className='font-semibold text-xl text-white'>
+            <a href='/'>Oasis</a>
+          </div>
+          <div className='flex justify-center flex-1 space-x-8 text-center'>
+            <h1 className='font-medium text-sm text-white'>
+              <a href='/trade-data'>Add Trade</a>
+            </h1>
+            <h1 className='font-medium text-sm text-white ml-[40px]'>
+              <a href='/trade'>Share</a>
+            </h1>
+          </div>
+          <div className='text-white'>
+         Connect
+          </div>
+        </div>
+        <hr className='border-t border-blue-600' />
+      </nav>
+    );
+  }
+  
+
+export default Navbar
