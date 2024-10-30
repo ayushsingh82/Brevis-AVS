@@ -6,13 +6,13 @@ import {createBrowserRouter,RouterProvider,createRoutesFromElements} from 'react
 import { Route } from 'react-router-dom'
 import Home from './components/Home.jsx'
 import Navbar from './components/Navbar.jsx'
-
+import UserGated from './components/UserGated.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
     <Route path='/' element={<Home/>}/>
-   
+    <Route path='/user-gated' element={<UserGated/>}/>
     </Route>
   )
 )

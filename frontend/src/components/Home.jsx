@@ -22,9 +22,9 @@ const Home = () => {
           >
             {/* Infinite Y-axis up and down movement */}
             <motion.img
-    src="https://cdn.prod.website-files.com/6600cac2bfd894b77d543d34/660ef942cf174beabb191e8f_Oasis%20Subscribe%20Logo%201.svg"
+    src="https://getcelerapp.s3.us-west-1.amazonaws.com/brevis-website/images/logo.svg"
     alt="Aligned Layer Image"
-    className="rounded-lg shadow-md h-[100px] w-[200px] bg-transparent"
+    className="rounded-lg shadow-md h-[100px] w-[200px] bg-transparent invert"
     animate={{ 
       y: [-10, 10, -10],  // Moves 10px up and down
     }}
@@ -34,6 +34,20 @@ const Home = () => {
       ease: 'easeInOut',   // Smooth easing
     }}
   />
+
+  <motion.img
+  src="https://cryptologos.cc/logos/uniswap-uni-logo.svg"
+  alt="Aligned Layer Image"
+  className="rounded-lg shadow-md h-[100px] w-[200px] bg-transparent "
+  animate={{ 
+    y: [-10, 10, -10],  // Moves 10px up and down
+  }}
+  transition={{ 
+    repeat: Infinity,    // Infinite loop
+    duration: 5,         // Duration for the full loop
+    ease: 'easeInOut',   // Smooth easing
+  }}
+/>
 
           </motion.div>
             </h1>
@@ -63,46 +77,6 @@ const Home = () => {
               </button>
             </div>
 
-            {/* Floating Logos */}
-            {/* <div className="relative mt-10">
-              <motion.div
-                className="flex gap-10"
-                initial={{ x: '-100%' }}
-                animate={{ x: '100%' }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: 'loop',
-                  duration: 12,  // Adjust speed here
-                  ease: 'linear'
-                }}
-              >
-                <img
-                  src="https://cryptologos.cc/logos/polkadot-new-dot-logo.svg?v=024"
-                  alt="Polkadot Logo"
-                  className="h-12 w-auto"
-                />
-                <img
-                  src="https://cryptologos.cc/logos/astar-astr-logo.svg?v=024"
-                  alt="Astar Logo"
-                  className="h-12 w-auto"
-                />
-                <img
-                  src="https://cryptologos.cc/logos/moonbeam-glmr-logo.svg?v=024"
-                  alt="Moonbeam Logo"
-                  className="h-12 w-auto"
-                />
-                <img
-                  src="https://cryptologos.cc/logos/kusama-ksm-logo.svg?v=024"
-                  alt="Kusama Logo"
-                  className="h-12 w-auto"
-                />
-                 <img
-                  src="https://cdn.prod.website-files.com/66475ee97bcbe587a63b28c9/6699032a94bb4eeb967a25ea_peaq-opengraph.webp"
-                  alt="Peaq Logo"
-                  className="h-12 w-42 "
-                />
-              </motion.div>
-            </div> */}
           </div>
 
           {/* Right Section - Animated Image */}
@@ -114,7 +88,7 @@ const Home = () => {
           >
             {/* Infinite Y-axis up and down movement */}
             <motion.img
-    src="https://cdn.prod.website-files.com/6600cac2bfd894b77d543d34/660ef942cf174beabb191e8f_Oasis%20Subscribe%20Logo%201.svg"
+src="https://cryptologos.cc/logos/uniswap-uni-logo.svg"
     alt="Aligned Layer Image"
     className="rounded-lg shadow-md h-[100px] w-[200px] bg-transparent"
     animate={{ 
@@ -126,6 +100,20 @@ const Home = () => {
       ease: 'easeInOut',   // Smooth easing
     }}
   />
+  <motion.img
+  src="https://getcelerapp.s3.us-west-1.amazonaws.com/brevis-website/images/logo.svg"
+  alt="Aligned Layer Image"
+  className="rounded-lg shadow-md h-[100px] w-[200px] bg-transparent invert"
+  animate={{ 
+    y: [-10, 10, -10],  // Moves 10px up and down
+  }}
+  transition={{ 
+    repeat: Infinity,    // Infinite loop
+    duration: 5,         // Duration for the full loop
+    ease: 'easeInOut',   // Smooth easing
+  }}
+/>
+
 
           </motion.div>
 
