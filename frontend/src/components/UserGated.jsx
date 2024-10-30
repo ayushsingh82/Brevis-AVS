@@ -23,17 +23,17 @@ const UserGated = () => {
         <h2 className="text-2xl font-semibold mb-4 text-center">How It Works</h2>
         
         {/* Feature Boxes */}
-        <div className="bg-white shadow-md rounded-md p-6">
+        <div className="bg-blue-500 text-white shadow-md rounded-md p-6">
           <h3 className="text-xl font-semibold mb-2">1. Proof Submission</h3>
           <p>Users submit proof of eligibility based on their historical interactions with the platform.</p>
         </div>
 
-        <div className="bg-white shadow-md rounded-md p-6">
+        <div className="bg-blue-500 text-white shadow shadow-md rounded-md p-6">
           <h3 className="text-xl font-semibold mb-2">2. Verification Process</h3>
           <p>The <strong>User-Gating Hook</strong> verifies this proof, checking if the user meets eligibility criteria based on past behavior.</p>
         </div>
 
-        <div className="bg-white shadow-md rounded-md p-6">
+        <div className="bg-blue-500 text-white shadow shadow-md rounded-md p-6">
           <h3 className="text-xl font-semibold mb-2">3. Access Granted</h3>
           <p>Eligible users gain access to exclusive features, encouraging further engagement and rewarding loyalty.</p>
         </div>

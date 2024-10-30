@@ -23,8 +23,11 @@ function Navbar() {
           </button>
           {isDropdownOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md">
-              <a href='/user-gated' className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>UserGated Hook</a>
-              <a href='/' className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>Hook2</a>
+              <a href='/user-gated' className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>UserGated </a>
+              <a href='/trading-fee' className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>TradingFee </a>
+              <a href='/wallet-recovery' className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>WalletRecovery </a>
+              <a href='/loyalty-retention' className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>LoyaltyRetention </a>
+              <a href='/active-liquidity' className='block px-4 py-2 text-gray-700 hover:bg-gray-200'>ActiveLiquidity </a>
             </div>
           )}
         </div>
