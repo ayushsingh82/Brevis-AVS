@@ -11,7 +11,7 @@ function Navbar() {
     <nav className=''>
       <div className='flex flex-row mx-auto px-[40px] py-[25px] justify-between items-center mt-[0px] bg-black'>
         <div className='font-semibold text-xl text-white'>
-          <a href='/'>Brevis</a>
+          <a href='/'>Brevis5Flow</a>
         </div>
         <div className='flex justify-center flex-1 space-x-8 text-center'>
         </div>
