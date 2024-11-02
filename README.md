@@ -1,89 +1,60 @@
-# Brevis Quickstart Typescript
+# Brevis5Flow
 
-This repo contains a simple end-to-end brevis application
-that proves the account age for a given user and handles the attested age in an app contract.
+Brevis5Flow is a modular framework that enhances user engagement, security, and platform efficiency through various custom hooks. These hooks use historical user data and real-time market conditions, verified by Brevis zk-proofs, to deliver tailored experiences in decentralized applications.
 
-## Environment Requirements
+## Project Hooks
 
-- Go >= 1.20
-- Node.js LTS
+### 1. User-Gating Hook
+The **User-Gating Hook** grants exclusive access to certain features based on users' historical behavior. This functionality encourages loyalty by rewarding users who engage consistently.
 
-## [Prover](./prover)
+**How It Works**
+- **Proof Submission**: Users submit proof of eligibility based on their historical interactions with the platform.
+- **Verification Process**: The hook verifies this proof, checking if the user meets eligibility criteria based on past behavior.
+- **Access Granted**: Eligible users gain access to exclusive features, rewarding loyalty and encouraging continued engagement.
 
-The prover service is a standalone process that is run on a server, preferably as a systemd managed process so that it can be auto restarted if any crash happens. The prover service is designed to be used in conjunction with [brevis-network/brevis-sdk-typescript](https://github.com/brevis-network/brevis-sdk-typescript). 
+### 2. Fee Adjustment Hook
+The **Fee Adjustment Hook** dynamically adjusts trading fees based on a user's trading history. This incentivizes high-frequency traders with reduced fees, fostering engagement and loyalty.
 
-### Start Prover (for testing)
+**How It Works**
+- **Order Placement**: Traders place an order and submit proof of their trading history as part of the process.
+- **Verification Process**: The hook checks historical trading activity to determine the appropriate fee rate.
+- **Fee Rate Adjustment**: Based on trading behavior, eligible high-frequency traders receive a reduced fee (e.g., 5%), while regular traders incur a standard fee (e.g., 1%).
 
-```bash
-cd prover
-make start
-```
+### 3. Wallet Recovery Hook
+The **Wallet Recovery Hook** provides a secure method for users to recover wallets by verifying identity and historical on-chain behavior, enhancing user trust.
 
-### Start Prover with Systemd (in production on linux server)
+**How It Works**
+- **Identity Verification**: The wallet owner submits proof of their identity and on-chain activity as part of the recovery process.
+- **Eligibility Verification**: The hook checks the submitted proof to confirm the user’s criteria for wallet recovery.
+- **Secure Wallet Recovery**: Upon successful verification, the user can securely recover their wallet, enhancing platform trust and security.
 
-You may want to have a process daemon to manage the prover services in production. The [Makefile](prover/Makefileefile) in the project root contains some convenience scripts. 
+### 4. Loyalty Retention Hook
+The **Loyalty Retention Hook** rewards users for engagement by tracking loyalty points based on their platform activity. This encourages frequent interactions, promoting long-term retention.
 
-To build, init systemd, and start both prover processes, run the following command. Note it requires sudo privilege because we want to use systemd commands
+**How It Works**
+- **Engagement Tracking**: User activities on the platform are monitored to track loyalty behavior.
+- **Loyalty Points Calculation**: Loyalty points are calculated based on engagement levels, rewarding users with points for each interaction.
+- **Points Redemption**: Users can redeem loyalty points for discounts or perks, encouraging ongoing platform interaction and enhancing loyalty.
 
-```bash
-cd prover
-make deploy
-```
+### 5. Active Liquidity Management Hook
+The **Active Liquidity Management Hook** manages market liquidity dynamically by adjusting available liquidity based on verified market conditions, ensuring efficient and trust-free liquidity adjustments.
 
-# [App](./app)
+**How It Works**
+- **Trigger Events**: Market activities like high volatility or trade volume serve as triggers for liquidity adjustments.
+- **Liquidity Evaluation**: The hook uses Brevis zk-proofs to verify market conditions and determine the need for liquidity changes.
+- **Liquidity Adjustment**: Liquidity is either added or removed based on the evaluation, optimizing market efficiency and maintaining balance.
 
-The Node.js project in ./app is a simple program that does the following things:
+## Benefits of Brevis5Flow
+- **Enhanced User Engagement**: Tailored user experiences through loyalty and fee adjustments.
+- **Improved Security**: Secure wallet recovery and access gating.
+- **Optimized Market Operations**: Dynamic liquidity management ensures market efficiency.
+- **Decentralized Trust**: Brevis zk-proofs enable trust-free verifications, enhancing security across functionalities.
 
-1. call the Go prover with some transaction data to generate an account age proof
-2. call Brevis backend service and submit the account age proof
-3. wait until the final proof is submitted on-chain and our contract is called
+## Getting Started
+To start using Brevis5Flow, clone this repository and follow the setup instructions. Customize each hook to fit your specific application needs and integrate with Brevis zk-proofs for trustless verification.
 
-## How to Run
+## Future Enhancements
+In future versions, we aim to expand the hooks’ capabilities by introducing advanced consensus mechanisms, more sophisticated user segmentation, and multi-chain support for cross-chain applications.
 
-```bash
-cd app
-npm run start [TransactionHash]
-```
-Example for Normal Flow
-```bash
-npm run start 0x02869126ca667c76e819078d5326feb5d17f276ce5786de47e78334f15530e74
-```
-
-Example for Brevis Partner Flow
-```bash
-npm run start 0x02869126ca667c76e819078d5326feb5d17f276ce5786de47e78334f15530e74 TEST_ACCOUNT_AGE_KEY 0xeec66d9b615ff84909be1cb1fe633cc26150417d
-```
->[!NOTE]
->Brevis partner key **IS NOT** required to submit request to Brevis Gateway
-
-# [Contracts](./contracts)
-
-The app contract [AccountAge.sol](./contracts/contracts/AccountAge.sol) is called
-after you submit proof is submitted to Brevis when Brevis'
-systems submit the final proof on-chain.
-It does the following things when handling the callback:
-
-1. checks the proof was associated with the correct vk hash
-2. decodes the circuit output
-3. emit a simple event
-
-## Init
-
-```bash
-cd contracts
-npm install
-```
-
-## Test
-
-```bash
-npm run test
-```
-
-## Deploy
-
-Rename `.env.template` to `.env`. Fill in the required env vars.
-
-```bash
-npx hardhat deploy --network sepolia --tags AccountAge
-```
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
