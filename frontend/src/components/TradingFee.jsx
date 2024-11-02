@@ -38,7 +38,7 @@ const TradingFee = () => {
         {/* Right Column - Image */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <img 
-            src="../../public/FeeAdjustment.png"  // Replace with the correct image path if different
+            src="/FeeAdjustment.png"  // Replace with the correct image path if different
             alt="Diagram showing Fee Adjustment flow" 
             className="max-w-full rounded-md shadow-lg h-[300px] w-[600px]" 
           />

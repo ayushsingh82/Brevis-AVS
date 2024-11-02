@@ -38,7 +38,7 @@ const WalletRecovery = () => {
         {/* Right Column - Image */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <img 
-            src="../../public/WalletRecovery.png"  // Replace with the correct image path if different
+            src="/WalletRecovery.png"  // Replace with the correct image path if different
             alt="Diagram showing Wallet Recovery flow" 
             className="max-w-full rounded-md shadow-lg h-[300px] w-[600px]" 
           />
